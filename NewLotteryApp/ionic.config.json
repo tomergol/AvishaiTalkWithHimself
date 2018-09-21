@@ -1,0 +1,8 @@
+{
+  "name": "NewLotteryApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "9b101356"
+}
