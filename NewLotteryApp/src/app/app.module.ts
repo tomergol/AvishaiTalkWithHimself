@@ -1,8 +1,10 @@
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -10,6 +12,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from '../components/components.module';
+import { ContextProvider } from '../providers/context/context';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { ComponentsModule } from '../components/components.module';
     ListPage,
   ],
   imports: [
+    HttpModule,
+    HttpClientModule,
     CommonModule,
     BrowserModule,
     ComponentsModule,
@@ -30,9 +35,11 @@ import { ComponentsModule } from '../components/components.module';
     ListPage,
   ],
   providers: [
+    SocialSharing,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ContextProvider
   ]
 })
 export class AppModule {}

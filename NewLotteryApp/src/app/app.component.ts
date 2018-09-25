@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ContextProvider } from '../providers/context/context';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,9 +17,9 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen , private _context: ContextProvider) {
     this.initializeApp();
-
+    console.log(this._context.testConnection());
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
