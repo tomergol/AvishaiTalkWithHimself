@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 /**
  * Generated class for the AdButtonComponent component.
@@ -15,8 +16,9 @@ export class AdButtonComponent {
   text: string;
 
   constructor() {
-    console.log('Hello AdButtonComponent Component');
-    this.text = 'Hello World';
   }
-
+  adPopUp(){
+    alert('AD');
+  }
+  
 }
