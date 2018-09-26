@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 
 /**
  * Generated class for the LottoTicketComponent component.
@@ -17,7 +18,7 @@ export class LottoTicketComponent {
   picId;
   unicId;
   imgUrl = "dollar2";
-  constructor() {
+  constructor(private fb: Facebook) {
   
   }
   ngOnInit(){
@@ -39,6 +40,44 @@ export class LottoTicketComponent {
   }
 
   logWithFaceBook(){
-    alert('please log with facebook!')
+    this.fb.login(['public_profile'])
+    .then( (res: FacebookLoginResponse) => {
+
+        // The connection was successful
+        if(res.status == "connected") {
+          alert('connected!');
+            // Get user ID and Token
+            var fb_id = res.authResponse.userID;
+            var fb_token = res.authResponse.accessToken;
+
+            // Get user infos from the API
+            // this.fb.api("/me?fields=name,gender,birthday,email", []).then((user) => {
+
+            //     // Get the connected user details
+            //     var gender    = user.gender;
+            //     var birthday  = user.birthday;
+            //     var name      = user.name;
+            //     var email     = user.email;
+
+            //     console.log("=== USER INFOS ===");
+            //     console.log("Gender : " + gender);
+            //     console.log("Birthday : " + birthday);
+            //     console.log("Name : " + name);
+            //     console.log("Email : " + email);
+
+            //     // => Open user session and redirect to the next page
+
+            // });
+
+        } 
+        // An error occurred while loging-in
+        else {
+            alert("An error occurred...");
+        }
+
+    })
+    .catch((e) => {
+       alert('Error logging into Facebook');
+    });
   }
 }
