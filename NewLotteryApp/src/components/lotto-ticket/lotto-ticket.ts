@@ -51,23 +51,24 @@ export class LottoTicketComponent {
             var fb_token = res.authResponse.accessToken;
 
             // Get user infos from the API
-            // this.fb.api("/me?fields=name,gender,birthday,email", []).then((user) => {
+            this.fb.api("/me?fields=name", []).then((user) => {
 
-            //     // Get the connected user details
-            //     var gender    = user.gender;
-            //     var birthday  = user.birthday;
-            //     var name      = user.name;
-            //     var email     = user.email;
+                // Get the connected user details
+                // var gender    = user.gender;
+                // var birthday  = user.birthday;
+                var name      = user.name;
+                alert('welcome ' + name);
+                // var email     = user.email;
 
-            //     console.log("=== USER INFOS ===");
-            //     console.log("Gender : " + gender);
-            //     console.log("Birthday : " + birthday);
-            //     console.log("Name : " + name);
-            //     console.log("Email : " + email);
+                // console.log("=== USER INFOS ===");
+                // console.log("Gender : " + gender);
+                // console.log("Birthday : " + birthday);
+                // console.log("Name : " + name);
+                // console.log("Email : " + email);
 
-            //     // => Open user session and redirect to the next page
+                // => Open user session and redirect to the next page
 
-            // });
+            });
 
         } 
         // An error occurred while loging-in
