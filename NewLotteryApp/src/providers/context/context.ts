@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ContextProvider {
-  SERVER_URL = '0.0.0.0';
+  SERVER_URL = 'https://testdomain.com:7001/getCountries';
   SERVER_PORT = '1111';
   ConnectionStatusPath = '1111';
 
@@ -18,7 +18,7 @@ export class ContextProvider {
   }
 
   async testConnection(){
-    this.http.get(this.SERVER_URL + '/' + this.SERVER_PORT + '/' + this.ConnectionStatusPath).subscribe(()=> {
+    this.http.get(this.SERVER_URL).subscribe(()=> {
       return true;
     },(error)=> {
       console.log(error);
