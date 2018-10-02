@@ -1,43 +1,64 @@
 <div class="container-fluid">
-  <div class="row">
-
-  </div>
-  <div class="content">
-    <i id="info" secondary menuToggle class="fa fa-cog fa-2x"></i>
-    <div class="lottery">
-      <h3>Next Lottery IN:</h3>
-      <timer></timer>
-      <h1 style="padding-top: 50px;">Current Prize:</h1>
-      <h1>
-        $ 1,000,000
-      </h1>
-      <br>
-      <div class="row">
-        <div class="col-4">
-          <div class="lotto-ticket">
-            <lotto-ticket [id]="'first'"></lotto-ticket>
-          </div>
-        </div>
-
-        <div class="col-4">
-          <div class="lotto-ticket">
-            <lotto-ticket [id]="'second'"></lotto-ticket>
-          </div>
-        </div>
-
-        <div class="col-4">
-          <div class="lotto-ticket">
-            <lotto-ticket [id]="'therd'"></lotto-ticket>
-          </div>
-
-        </div>
-        <!-- <div class="lotto-cards"> -->
-        <!-- </div> -->
-      </div>
-      <h3>share with friends!</h3>
-      <i (click)="sharing()" class="fas fa-share-alt-square fa-3x"></i>
+  <div class="row" style="height: 80%;" id="top">
+    <div class="row" id="setting">
+      <i id="info" secondary menuToggle class="fa fa-cog fa-2x" style="width:50px;"></i>
     </div>
-    <div class="footer">
+    <h3>Next Lottery IN:</h3>
+    <timer></timer>
+    <div class="row" id="lottery">
+      <div class="col-6" id="lotto-info">
+        <div class="row h-50">
+
+          <!-- <h1>Current Prize:</h1> -->
+          <img src="../../assets/imgs/treasure.png" alt="" style="height: 100px; width: 100px; margin: auto;">
+        </div>
+        <div class="row h-50">
+          <h1>
+            $ 5,332,120
+          </h1>
+        </div>
+      </div>
+
+      <div class="col-6" id="lotto-info">
+        <div class="row h-50">
+          <span style="text-align: left;"><h4 style="margin: 0;"> your tickets:</h4></span>
+
+          <div class="col-4 mx-0 p-0">
+            <div class="lotto-ticket">
+              <lotto-ticket [id]="'first'"></lotto-ticket>
+            </div>
+          </div>
+
+          <div class="col-4 mx-0 p-0" style="margin:0 !important;">
+            <div class="lotto-ticket">
+              <lotto-ticket [id]="'second'"></lotto-ticket>
+            </div>
+          </div>
+
+          <div class="col-4 mx-0 p-0" style="margin:0 !important;">
+            <div class="lotto-ticket">
+              <lotto-ticket [id]="'therd'"></lotto-ticket>
+            </div>
+          </div>
+        </div>
+        <div class="row h-50">
+          <span style="text-align: left; margin-top: 2rem;"><h4 style="margin: 0;">total tickets: 20,131</h4> </span>
+        </div>
+      </div>
+    </div>
+
+    <br>
+  </div>
+  <div class="row" style="height: 20%;" id="botton">
+    <div class="row h-25" id="share">
+      <p style="width:50%">share with friends!</p>
+      <i (click)="sharing()" class="fas fa-share-alt-square fa-2x" style="width:50%;"></i>
+    </div>
+    <div class="row h-25" id="survey">
+        <p style="width: 50%;">take a survey</p>
+        <i class="fas fa-share-alt-square fa-2x" style="width:50%;"></i>
+      </div>
+    <div class="row h-50">
       <ad-button style="cursor: pointer;"></ad-button>
     </div>
   </div>

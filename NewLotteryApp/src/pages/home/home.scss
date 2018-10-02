@@ -1,32 +1,41 @@
 page-home {
-    .container-fluid{
-        padding-left: 0 !important;
+    .row {
+        &, * {
+            width: 100%;
+        }
     }
-    background-color:#181515;
-    .content{
-        color: white;
+    .container-fluid{
+        // color: white;
         text-align: center;
         height: 100%;
         width: 100%;
-        padding: 15px;
-        // background-color: rgb(31, 25, 25);
-        
-        
+        padding: 0 !important;
+        padding-top: 10px !important; 
     }
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        color: white;
-        text-align: center;
-     }
+    .row{
+        width: 100% !important;
+        margin: 0;
+    }
+    // background-color:#181515;
+    background-color:whitesmoke;
+    //whitesmoke
+    // #footer {
+    //     position: absolute;
+    //     left: 0;
+    //     bottom: 0;
+    //     width: 100%;
+    //     color: white;
+    //     text-align: center;
+    //  }
     .lotto-cards{
         width: 100%;
     }
+    .prize{
+        max-height: 200px;
+        // background-color: black;
+    }
    .lotto-ticket{
     display: inline-block; 
-    margin:10px;
    }
     i{
         cursor: pointer;
@@ -39,11 +48,27 @@ page-home {
         width: 150px;
     }
     .lottery{
-        margin-top: 100px;
+        margin-top: 50px;
     }
     #content {
         width: 100px;
         height: 100px;
         position: relative;
       }
+    #lotto-info{
+        //   background-color: grey;
+        //   border: black 2px solid;
+    }
+    #share{
+       background-color: #bb0000;
+    }
+    #survey{
+       background-color: #2a2afb;
+       border-top: black 1px solid;
+       border-bottom: black 1px solid;
+    }
+    #botton{
+        border-top: #00000075 3px solid;
+        color: white;
+    }
 }
