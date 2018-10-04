@@ -30,6 +30,9 @@ page-home {
     .lotto-cards{
         width: 100%;
     }
+    .card{
+        box-shadow: 5px 5px grey;
+    }
     .prize{
         max-height: 200px;
         // background-color: black;
@@ -42,6 +45,9 @@ page-home {
     }
     #info{
         float: left;
+        .card{
+            height: 80% !important;
+        }
     }
     #lotteryB{
         background-color: green;
@@ -70,5 +76,20 @@ page-home {
     #botton{
         border-top: #00000075 3px solid;
         color: white;
+    }
+    #add_dollar{
+        border:2px solid black;
+        width: 25px;
+        height: 40px;
+        max-width: 50%;
+        margin: auto;
+        max-height: 100%;
+    }
+    .fa-share-alt-square:before{
+        vertical-align: sub;
+    }
+    canvas{
+        height: 100px !important;
+        width: 100px !important;
     }
 }
