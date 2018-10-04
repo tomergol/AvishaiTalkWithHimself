@@ -8,7 +8,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import { ChartModule } from 'primeng/chart';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from '../components/components.module';
@@ -27,6 +27,7 @@ import { Facebook } from '@ionic-native/facebook';
     CommonModule,
     BrowserModule,
     ComponentsModule,
+    ChartModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -40,8 +41,8 @@ import { Facebook } from '@ionic-native/facebook';
     SocialSharing,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     ContextProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
