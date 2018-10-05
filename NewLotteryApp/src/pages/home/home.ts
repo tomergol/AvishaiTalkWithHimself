@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
-
+declare var Chart:any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -12,24 +12,33 @@ export class HomePage {
   file = null;
   link = 'www.google.com';
   data;
-  constructor(private socialSharing: SocialSharing) {
-    this.data = {
-      labels: ['people','tickets'],
-      datasets: [
-          {
-              data: [50, 124],
+  doughnutChart: any;
+  @ViewChild('doughnutCanvas') doughnutCanvas;
+
+  ionViewDidLoad() {
+    this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+      type: 'doughnut',
+      data: {
+          labels: ["pepole", "tickets"],
+          datasets: [{
+              label: '# of Votes',
+              data: [62,38],
               backgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  // "#FFCE56"
+                  '#FEF20E',
+                  '#56A139',
               ],
               hoverBackgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  // "#FFCE56"
+                  "#E0DD4C",
+                  "#b0bf7a",
               ]
-          }]    
-      };
+          }]
+      }
+
+  });
+
+  }
+  constructor(private socialSharing: SocialSharing) {
+  
    }
 
   sharing() {
