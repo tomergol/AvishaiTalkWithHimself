@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from '../components/components.module';
 import { ContextProvider } from '../providers/context/context';
 import { Facebook } from '@ionic-native/facebook';
+import { AdButtonComponent } from '../components/ad-button/ad-button';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { Facebook } from '@ionic-native/facebook';
     MyApp,
     HomePage,
     ListPage,
+    ActionListComponent
   ],
   providers: [
     Facebook,
