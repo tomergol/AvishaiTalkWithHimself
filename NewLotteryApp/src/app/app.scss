@@ -1,5 +1,9 @@
 // http://ionicframework.com/docs/theming/
-
+body{
+    & , * {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
 
 // App Global Sass
 // --------------------------------------------------
